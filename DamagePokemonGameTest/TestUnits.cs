@@ -13,6 +13,8 @@ namespace DamagePokemonGameTest
             Game game = new Game();
 
             int daño = game.calculateDamage("Hierba", "Fuego", 2, 3);
+
+            Assert.AreEqual(0, daño);
         }
     }
 }
