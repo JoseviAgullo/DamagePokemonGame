@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DamagePokemonGame
 {
-    class Game
+    public class Game
     {
         static void Main(string[] args)
         {
