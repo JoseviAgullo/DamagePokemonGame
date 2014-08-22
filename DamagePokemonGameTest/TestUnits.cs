@@ -8,6 +8,7 @@ namespace DamagePokemonGameTest
     public class TestUnits
     {
         private Game game;
+        private int daño = 0;
 
         [TestInitialize]
         public void setUp()
@@ -18,7 +19,7 @@ namespace DamagePokemonGameTest
         [TestMethod]
         public void TestMinimumDamage()
         {            
-            int daño = game.calculateDamage("Hierba", "Fuego", 240, 240);
+            daño = game.calculateDamage("Hierba", "Fuego", 240, 240);
 
             Assert.AreEqual(1, daño);
         }
@@ -26,7 +27,7 @@ namespace DamagePokemonGameTest
         [TestMethod]
         public void TestNormalDamage()
         {
-            int daño = game.calculateDamage("Hierba", "Fuego", 240, 120);
+            daño = game.calculateDamage("Hierba", "Fuego", 240, 120);
 
             Assert.AreEqual(2, daño);
         }
