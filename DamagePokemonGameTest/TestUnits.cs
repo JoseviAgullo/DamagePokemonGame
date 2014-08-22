@@ -7,11 +7,17 @@ namespace DamagePokemonGameTest
     [TestClass]
     public class TestUnits
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-            Game game = new Game();
+        private Game game;
 
+        [TestInitialize]
+        public void setUp()
+        {
+            game = new Game();
+        }
+
+        [TestMethod]
+        public void TestDamage()
+        {            
             int daño = game.calculateDamage("Hierba", "Fuego", 2, 3);
 
             Assert.AreEqual(0, daño);
