@@ -14,7 +14,7 @@ namespace DamagePokemonGame
 
         public int calculateDamage(string attackType, string deffenderType, int attack, int defense)
         {
-            return 0;
+            return 1;
         }
     }
 }
