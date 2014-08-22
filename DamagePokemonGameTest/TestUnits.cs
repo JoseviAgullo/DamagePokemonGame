@@ -19,17 +19,25 @@ namespace DamagePokemonGameTest
         [TestMethod]
         public void TestMinimumDamage()
         {            
-            daño = game.calculateDamage("Hierba", "Fuego", 240, 240);
+            daño = game.calculateDamage("Hierba", "Hierba", 240, 240);
 
-            Assert.AreEqual(1, daño);
+            Assert.AreEqual(50, daño);
         }
 
         [TestMethod]
         public void TestNormalDamage()
         {
-            daño = game.calculateDamage("Hierba", "Fuego", 240, 120);
+            daño = game.calculateDamage("Hierba", "Hierba", 240, 120);
 
-            Assert.AreEqual(2, daño);
+            Assert.AreEqual(100, daño);
+        }
+
+        [TestMethod]
+        public void TestEffectiveDamage()
+        {
+            daño = game.calculateDamage("Fuego", "Hierba", 240, 120);
+
+            Assert.AreEqual(200, daño);
         }
 
     }

@@ -14,7 +14,7 @@ namespace DamagePokemonGame
 
         public int calculateDamage(string attackType, string deffenderType, int attack, int defense)
         {
-            int damage = attack / defense;
+            int damage = 50 * (attack / defense);
 
             return damage;
         }
