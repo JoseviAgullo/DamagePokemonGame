@@ -40,5 +40,13 @@ namespace DamagePokemonGameTest
             Assert.AreEqual(200, daño);
         }
 
+        [TestMethod]
+        public void TestUneffectiveDamage()
+        {
+            daño = game.calculateDamage("Fuego", "Agua", 240, 120);
+
+            Assert.AreEqual(50, daño);
+        }
+
     }
 }
