@@ -21,7 +21,7 @@ namespace DamagePokemonGame
                     switch (deffender)
                     {
                         case "Fuego":
-                            effectiveness = 1;
+                            effectiveness = 0.5;
                             break;
                         case "Agua":
                             effectiveness = 0.5;
@@ -47,7 +47,7 @@ namespace DamagePokemonGame
                             effectiveness = 2;
                             break;
                         case "Hierba":
-                            effectiveness = 1;
+                            effectiveness = 0.5;
                             break;
                         case "Eléctrico":
                             effectiveness = 1;
@@ -64,7 +64,7 @@ namespace DamagePokemonGame
                             effectiveness = 2;
                             break;
                         case "Agua":
-                            effectiveness = 1;
+                            effectiveness = 0.5;
                             break;
                         case "Hierba":
                             effectiveness = 0.5;
@@ -90,7 +90,7 @@ namespace DamagePokemonGame
                             effectiveness = 1;
                             break;
                         case "Eléctrico":
-                            effectiveness = 1;
+                            effectiveness = 0.5;
                             break;
                         default:
                             effectiveness = 0;
@@ -104,12 +104,14 @@ namespace DamagePokemonGame
             return effectiveness;
         }
 
-        public int calculateDamage(string attackType, string deffenderType, int attack, int defense)
+        public int calculateDamage(string attackType, string deffenderType, double attack, double defense)
         {
             double effectiveness = calculateEffectiveness(attackType, deffenderType);
             double damage = 50 * (attack / defense) * effectiveness;
+            
+            double damageRounded = Math.Ceiling(damage / 1d);
 
-            return (int)damage;
+            return (int)damageRounded;
         }
     }
 }

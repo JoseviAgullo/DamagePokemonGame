@@ -21,7 +21,7 @@ namespace DamagePokemonGameTest
         {            
             daño = game.calculateDamage("Hierba", "Hierba", 240, 240);
 
-            Assert.AreEqual(50, daño);
+            Assert.AreEqual(25, daño);
         }
 
         [TestMethod]
@@ -29,7 +29,7 @@ namespace DamagePokemonGameTest
         {
             daño = game.calculateDamage("Hierba", "Hierba", 240, 120);
 
-            Assert.AreEqual(100, daño);
+            Assert.AreEqual(50, daño);
         }
 
         [TestMethod]
@@ -48,5 +48,12 @@ namespace DamagePokemonGameTest
             Assert.AreEqual(50, daño);
         }
 
+        [TestMethod]
+        public void TestDamageRound()
+        {
+            daño = game.calculateDamage("Fuego", "Agua", 0.84, 70);
+
+            Assert.AreEqual(1, daño);
+        }
     }
 }
