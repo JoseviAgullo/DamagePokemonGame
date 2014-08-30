@@ -12,7 +12,7 @@ namespace DamagePokemonGame
         {
         }
 
-        public double calculateEffective(string attack, string deffender)
+        public double calculateEffectiveness(string attack, string deffender)
         {
             double effectiveness = 0;
             switch (attack)
@@ -106,9 +106,10 @@ namespace DamagePokemonGame
 
         public int calculateDamage(string attackType, string deffenderType, int attack, int defense)
         {
-            int damage = 50 * (attack / defense);
+            double effectiveness = calculateEffectiveness(attackType, deffenderType);
+            double damage = 50 * (attack / defense) * effectiveness;
 
-            return damage;
+            return (int)damage;
         }
     }
 }
